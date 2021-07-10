@@ -12,9 +12,26 @@ import Information from "./Information"
 
 function Dashboard(props){
     const auth = firebase.auth()
+
+    const logout = async() =>{
+        try {
+      await auth.signOut()
+    } catch(err) {
+        console.error(err)
+    }
+ }
+
     return (
+        <div>
+        <br />
         <Information />
+        <button style = {logoutButtonStyle} onClick = {logout}>Log out</button>
+        </div>
     )
+}
+
+const logoutButtonStyle = {
+    marginTop : "10px"
 }
 
 export default Dashboard
