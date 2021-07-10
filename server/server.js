@@ -61,7 +61,6 @@ app.post("/register", (req, res)=>{
 })
 
 app.post("/sendUser", (req, res)=>{
-  const sa = 31
   console.log(req.body)
 })
 
