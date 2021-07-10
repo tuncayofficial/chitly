@@ -1,5 +1,5 @@
 import Card from "../Card"
-import SearchCommunity from "../SearchCommunity"
+import CommunityCard from "../CommunityCards"
 
 function Landing(){
 
@@ -13,7 +13,7 @@ function Landing(){
         </p>
         <p align = "center">
            <h1>Avaliable communities</h1>
-           <SearchCommunity />
+           <CommunityCard />
         </p>
         </p>
     )

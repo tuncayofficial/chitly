@@ -21,15 +21,19 @@ function App() {
 const [user] = useAuthState(auth)
 
 // eslint-disable-next-line react-hooks/exhaustive-deps
-const sendUser = () => {
-  const url = "https://localhost:8080/sendUser"
+const sendUser = async() => {
+  const url = "http://localhost:8080/sendUser"
   const options = {
     user
   }
-  axios.post(url, options)
+  await axios.post(url, user)
+  .then(res => console.log(res.data))
 }
 
+useEffect(() => {
 sendUser()
+}, [sendUser])
+
   
   return (
     <Router>

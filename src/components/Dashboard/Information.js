@@ -14,6 +14,7 @@ function Information(){
    const handleInput = (e) =>{
        setValue(e.target.value)
        localStorage.setItem("status",value)
+       console.log(user)
    }
 
    const handleView = () =>{
@@ -26,7 +27,7 @@ function Information(){
                <legend>Profile information</legend>
                <div className="nickname">Nickname : { user && user.displayName }</div>
                <div className="nickname">User ID : { user && user.uid }</div>
-               <div className="nickname">Status : {view ? (<input onChange = {handleInput} />) : localStorage.getItem("status") } <button onClick = {handleView}>Change</button></div>
+               <div className="nickname">Status : {view ? (<input className="statusInput" onChange = {handleInput} />) : localStorage.getItem("status") } <button style = {{ marginLeft : "10px" }} onClick = {handleView}>Change</button></div>
            </fieldset>
        </div>
    )

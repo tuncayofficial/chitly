@@ -31,7 +31,8 @@ function Dashboard(props){
 }
 
 const logoutButtonStyle = {
-    marginTop : "10px"
+    marginTop : "10px",
+    backgroundColor : "red"
 }
 
 export default Dashboard

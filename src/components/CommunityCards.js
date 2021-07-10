@@ -19,7 +19,6 @@ function CommunityCard(props){
     return (
       <div className="community">
           <div className = "banner">
-
           </div>
           <div className="description">
             <span className="title">{community.name}</span>

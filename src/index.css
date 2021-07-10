@@ -100,7 +100,7 @@ fieldset div {
   margin-bottom: 10px;
 }
 
-input {
+.statusInput {
   border : 0.5px solid black;
   padding : 15px;
   border-radius: 10px;

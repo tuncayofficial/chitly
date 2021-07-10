@@ -17,6 +17,8 @@ const port = 8080
 const db = process.env.DATABASE_URL
 
 const app = express()
+app.use(cors());
+app.use(express.json());
 
 app.use(express.urlencoded({extended : false}))
 app.use(session({
@@ -35,7 +37,6 @@ mongoose
     console.log("Connected To The Database..");
   });
 
-app.use(cors())
 
 app.get("/", (req, res) =>{
     res.json(req.user)
