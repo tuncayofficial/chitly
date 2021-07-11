@@ -14,6 +14,17 @@ const createCommunity = async(req, res, name, avatar, description, banner) =>{
       })
 }
 
+const findCommunity = async(req, res, name) => {
+  const community = await Community.findOne({ name }).then((err, doc)=>{
+    if(err) throw err
+    if(typeof doc === undefined){
+      res.sendStatus(403)
+    }
+    res.json(doc)
+  })
+}
+
 module.exports = {
-    createCommunity
+    createCommunity,
+    findCommunity
 }

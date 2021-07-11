@@ -11,14 +11,16 @@ import About from "./components/Pages/About"
 import Navbar from './components/Navbar'
 import axios from "axios"
 import auth from "./tools/firebase"
-import { useState, useEffect, useRef } from "react"
+import { useEffect, useRef } from "react"
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
+import Communities from "./components/Pages/Communities"
 
 function App() {
 
 
 const [user] = useAuthState(auth)
+let isAuth = localStorage.getItem("logged")
 
 // eslint-disable-next-line react-hooks/exhaustive-deps
 const sendUser = async() => {
@@ -42,7 +44,8 @@ sendUser()
       <Switch>
         <Route exact path = "/" render = {Landing} />
         <Route exact path = "/about" render = {About} />
-        <Route exact path = "/profile" render = {Dashboard} />
+        <Route exact path = "/communities" render = {Communities} />
+        {isAuth ?  (<Route exact path = "/profile" render = {Dashboard} />) : ""}
         </Switch>
        </div>
     </Router>

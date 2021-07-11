@@ -16,6 +16,7 @@ function Dashboard(props){
     const logout = async() =>{
         try {
       await auth.signOut()
+      localStorage.setItem("logged", false)
     } catch(err) {
         console.error(err)
     }

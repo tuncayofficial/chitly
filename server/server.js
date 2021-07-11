@@ -12,6 +12,7 @@ const userControllers = require("./controllers/users.js")
 const communityControllers = require("./controllers/communities.js")
 const User = require("./models/User")
 const Community = require("./models/Community")
+const { find } = require("./models/User")
 
 const port = 8080
 const db = process.env.DATABASE_URL
@@ -64,22 +65,33 @@ app.post("/sendUser", (req, res)=>{
   console.log(req.body)
 })
 
-app.post("/getCommunity", (req, res) =>{
-  Community.countDocuments().exec(function (_err, count) {
-
-    var random = Math.floor(Math.random() * count)
-
-    Community.findOne().skip(random).exec(
-      function (err, result) {
-        res.json(result)
-      })
-  })
+app.post("/getCommunity", async(req, res) =>{
+  let communities = await Community.find()
+  res.json(communities)
 })
 
 app.post("/createCommunity", (req, res)=> {
   const { createCommunity } = communityControllers
   const { name, avatar, description, banner } = req.body
   createCommunity(req, res, name, avatar, description, banner )
+})
+
+app.post("/getSpecificCommunity", (req, res)=> {
+  let { name } = req.body
+  let { findCommunity } = communityControllers
+  findCommunity(req, res, name)
+})
+
+app.get("/topics", (req, res) =>{
+  let topics = [
+    "Art",
+    "Programming & Technology",
+    "Move & TV Series",
+    "Book Clubs",
+    "Cooking"
+  ]
+
+  res.json(topics)
 })
 
 

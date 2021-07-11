@@ -12,7 +12,8 @@ function Information(){
    const [value, setValue] = useState("")
 
    const handleInput = (e) =>{
-       setValue(e.target.value)
+       const text = e.target.value.toString()
+       setValue(text.concat(" "))
        localStorage.setItem("status",value)
        console.log(user)
    }

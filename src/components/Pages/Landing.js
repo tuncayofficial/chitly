@@ -1,21 +1,21 @@
 import Card from "../Card"
-import CommunityCard from "../CommunityCards"
+import CommunityInfo from "../CommunityInfo"
+import { useState } from "react"
 
 function Landing(){
-
     return(
-        <p align = "center">
-        <p align = "center">
+        <div align = "center">
+        <div align = "center">
             <h1>Welcome to the Chitly</h1><br />
             <p>Chitly is a platform that you can create communities, posts and more!</p>
             <h1>Avaliable users</h1>
        <Card />
-        </p>
-        <p align = "center">
+        </div>
+        <div align = "center">
            <h1>Avaliable communities</h1>
-           <CommunityCard />
-        </p>
-        </p>
+                 <CommunityInfo />
+        </div>
+        </div>
     )
 }
 

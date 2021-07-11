@@ -12,6 +12,7 @@ function Login(props){
 
       const signInWithGoogle = () => {
         auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
+        localStorage.setItem("logged", true)
       }
       return (
         <div>
