@@ -4,7 +4,6 @@ import Landing from './components/Pages/Landing'
 import {
   BrowserRouter as Router,
   Route,
-  Link,
   Switch
 } from 'react-router-dom';
 import About from "./components/Pages/About"
@@ -13,23 +12,16 @@ import axios from "axios"
 import auth from "./tools/firebase"
 import { useEffect, useRef } from "react"
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { useCollectionData } from 'react-firebase-hooks/firestore';
 import Communities from "./components/Pages/Communities"
 
 function App() {
-
-
 const [user] = useAuthState(auth)
 let isAuth = localStorage.getItem("logged")
 
 // eslint-disable-next-line react-hooks/exhaustive-deps
 const sendUser = async() => {
   const url = "http://localhost:8080/sendUser"
-  const options = {
-    user
-  }
-  await axios.post(url, user)
-  .then(res => console.log(res.data))
+ axios.post(url, user)
 }
 
 useEffect(() => {

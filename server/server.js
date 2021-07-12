@@ -57,12 +57,12 @@ app.get("/user", async(req, res) => {
 
 app.post("/register", (req, res)=>{
     const { createUser } = userControllers
-    const { username, email, password } = req.body
-    createUser(req, res, username, email, password)
+    const { username, email, password, bio } = req.body
+    createUser(req, res, username, email, password, bio)
 })
 
 app.post("/sendUser", (req, res)=>{
-  console.log(req.body)
+    res.json(req.body)
 })
 
 app.post("/getCommunity", async(req, res) =>{
@@ -94,5 +94,18 @@ app.get("/topics", (req, res) =>{
   res.json(topics)
 })
 
+app.post("/addMember", (req, res) => {
+  let { addMember } = communityControllers
+  let {  communityName, user } = req.body
+  addMember(req, res, communityName, user)
+  console.log(req.body)
+})
+
+app.post("/quitMember", (req, res) => {
+  let { quitFromCommunity } = communityControllers
+  let {  communityName, user } = req.body
+  quitFromCommunity(req, res, communityName, user)
+  console.log(req.body)
+})
 
 app.listen(port, () => console.log("Server started and listening on 8080"))

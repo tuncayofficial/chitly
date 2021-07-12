@@ -24,7 +24,31 @@ const findCommunity = async(req, res, name) => {
   })
 }
 
+const addMember = async(req, res, communityName, user) => {
+    Community.updateOne(
+      {name : communityName},
+      { $push : { members : user } },
+      function(err, result){
+        if(err) throw err;
+        res.json(result)
+      }
+    )
+}
+
+const quitFromCommunity = async(req, res, communityName, user) => {
+  Community.updateOne(
+    {name : communityName},
+    { $pull : { members : user } },
+    function(err, result){
+      if(err) throw err;
+      res.json(result)
+    }
+  )
+}
+
 module.exports = {
     createCommunity,
-    findCommunity
+    findCommunity,
+    addMember,
+    quitFromCommunity
 }

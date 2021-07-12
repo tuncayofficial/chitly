@@ -19,7 +19,7 @@ function updateUser(req, res, id, newUsername){
    })
 }
 
-async function createUser(req, res, username, email, password){
+async function createUser(req, res, username, email, password, bio){
    const userObject = {
        username,
        email,

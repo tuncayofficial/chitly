@@ -113,7 +113,7 @@ input:focus {
 
 .community-card {
    width : 400px;
-   height: 300px;
+   height: 400px;
    background-color: transparent;
    padding: 15px;
    display: flex;
@@ -138,4 +138,13 @@ input:focus {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.info span {
+  margin-top : 8px;
+}
+
+.community-container {
+   max-width: 700px;
+   max-height: 700px;
 }
