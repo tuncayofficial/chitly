@@ -1,19 +1,28 @@
 import './App.css';
+
+// Components
 import Dashboard from "./components/Dashboard/Dashboard"
 import Landing from './components/Pages/Landing'
+import About from "./components/Pages/About"
+import Navbar from './components/Navbar'
+import Communities from "./components/Pages/Communities"
+import SpecificCommunity from './components/Pages/SpecificCommunity';
+
+// Contexts
+import AuthProvider from "./components/context/AuthContext"
+
+// Modules
 import {
   BrowserRouter as Router,
   Route,
   Switch
 } from 'react-router-dom';
-import About from "./components/Pages/About"
-import Navbar from './components/Navbar'
 import axios from "axios"
 import auth from "./tools/firebase"
 import { useEffect, useRef } from "react"
 import { useAuthState } from 'react-firebase-hooks/auth';
-import Communities from "./components/Pages/Communities"
-import AuthProvider from "./components/context/AuthContext"
+
+
 
 function App() {
 const [user] = useAuthState(auth)
@@ -40,6 +49,7 @@ sendUser()
         <Route exact path = "/about" render = {About} />
         <Route exact path = "/communities" render = {Communities} />
         <Route exact path = "/profile" render = {Dashboard} />
+        <Route path = "/community/:communityId" render = {SpecificCommunity} />
         </AuthProvider>
         </Switch>
        </div>
