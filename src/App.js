@@ -13,6 +13,7 @@ import auth from "./tools/firebase"
 import { useEffect, useRef } from "react"
 import { useAuthState } from 'react-firebase-hooks/auth';
 import Communities from "./components/Pages/Communities"
+import AuthProvider from "./components/context/AuthContext"
 
 function App() {
 const [user] = useAuthState(auth)
@@ -34,10 +35,12 @@ sendUser()
       <div className = "container">
       <Navbar />
       <Switch>
+        <AuthProvider>
         <Route exact path = "/" render = {Landing} />
         <Route exact path = "/about" render = {About} />
         <Route exact path = "/communities" render = {Communities} />
         {isAuth ?  (<Route exact path = "/profile" render = {Dashboard} />) : ""}
+        </AuthProvider>
         </Switch>
        </div>
     </Router>

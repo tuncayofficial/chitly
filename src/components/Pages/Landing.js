@@ -1,8 +1,10 @@
 import Card from "../Card"
 import CommunityInfo from "../CommunityInfo"
-import { useState } from "react"
+import { useState, useContext } from "react"
+import AuthProvider from "../context/AuthContext"
 
 function Landing(){
+
     return(
         <div align = "center">
         <div align = "center">
