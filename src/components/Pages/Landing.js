@@ -1,11 +1,11 @@
 import Card from "../Card"
 import CommunityInfo from "../CommunityInfo"
 import { useState, useContext } from "react"
-import AuthProvider from "../context/AuthContext"
+import { useAuth }from "../context/AuthContext"
 import "../styles/typewriter.css"
 
 function Landing(){
-
+    const user = useAuth()
     return(
         <div align = "center">
         <div align = "center">
@@ -21,6 +21,7 @@ function Landing(){
         <div align = "center">
            <h1>Avaliable communities</h1>
                  <CommunityInfo />
+                 <br /><br /><br /><br /><br /><br /><br /><br />
         </div>
         </div>
     )

@@ -7,6 +7,7 @@ import About from "./components/Pages/About"
 import Navbar from './components/Navbar'
 import Communities from "./components/Pages/Communities"
 import SpecificCommunity from './components/Pages/SpecificCommunity';
+import Footer from "./components/Footer"
 
 // Contexts
 import AuthProvider from "./components/context/AuthContext"
@@ -50,6 +51,7 @@ sendUser()
         <Route path = "/community/:communityId" render = {SpecificCommunity} />
         </AuthProvider>
         </Switch>
+        <Footer />
        </div>
     </Router>
   );

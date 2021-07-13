@@ -94,7 +94,7 @@ function CommunityCard(props){
                       <span className="id">Community ID : {community._id}</span>
                       <span className="members">Member count : {community.members.length}</span>
                    </div>
-                   {localStorage.getItem(community.name) ?  (<button  onClick={() => handleQuit(community.name, user, axios)}>Quit</button>) : (<button onClick={() => handleJoin(community.name, user, axios)}>Join</button>)  }
+                   {localStorage.getItem(community.name) ?  (<button style = {{ backgroundColor : "red"}} onClick={() => handleQuit(community.name, user, axios)}>Quit</button>) : (<button onClick={() => handleJoin(community.name, user, axios)}>Join</button>)  }
                    </div>
                )
            })}

@@ -1,4 +1,4 @@
-import { createContext } from "react"
+import { createContext, useContext } from "react"
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/auth';
@@ -17,4 +17,9 @@ const AuthProvider = ({ children }) => {
     )
 }
 
+const useAuth = () => {
+   return "sa"
+}
+
+export { useAuth }
 export default AuthProvider
