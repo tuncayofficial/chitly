@@ -62,7 +62,7 @@ app.post("/register", (req, res)=>{
 })
 
 app.post("/sendUser", (req, res)=>{
-    res.json(req.body)
+   res.json(req.body)
 })
 
 app.post("/getCommunity", async(req, res) =>{

@@ -5,6 +5,7 @@ import 'firebase/firestore';
 import 'firebase/auth';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
+import Button from '@material-ui/core/Button';
 
 function CommunityCard(props){
    const [communities, setCommunities] = useState([])
@@ -93,7 +94,7 @@ function CommunityCard(props){
                       <span className="id">Community ID : {community._id}</span>
                       <span className="members">Member count : {community.members.length}</span>
                    </div>
-                   {localStorage.getItem(community.name) ?  (<button onClick={() => handleQuit(community.name, user, axios)}>Quit</button>) : (<button onClick={() => handleJoin(community.name, user, axios)}>Join</button>)  }
+                   {localStorage.getItem(community.name) ?  (<button  onClick={() => handleQuit(community.name, user, axios)}>Quit</button>) : (<button onClick={() => handleJoin(community.name, user, axios)}>Join</button>)  }
                    </div>
                )
            })}

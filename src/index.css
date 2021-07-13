@@ -55,7 +55,8 @@ body {
 }
 
  button {
-  padding : 15px;
+  width : 80px;
+  height : 50px;
   border : none;
   transition: 100ms all;
   background : dodgerblue;
@@ -88,14 +89,14 @@ button:active {
   height: 200px;
   display : inline-block;
   text-align: center;
-  background-color: #282828;
+  background-color: white;
+  color : black;
 }
 
 .card:hover {
  /* position: relative;
   bottom : 10px; */
   transform: scale(1.05);
-  color : white;
 }
 
 a {
@@ -138,16 +139,20 @@ input:focus {
 .community-card {
    width : 400px;
    height: 400px;
-   background-color: black;
+   background-color: white;
+   color : black;
    padding: 15px;
    display: flex;
    flex-direction: column;
    justify-content: center;
    align-items: center;
-   border: 2px solid black;
    border-radius: 20px;
    margin: auto 10px;
    margin-top : 10px;
+}
+
+.community-card span {
+  margin-bottom : 5px;
 }
 
 .community-container {
@@ -155,6 +160,9 @@ input:focus {
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  max-width: 700px;
+  max-height: 700px;
+  flex-wrap: wrap;
 }
 
 .info {
@@ -168,10 +176,7 @@ input:focus {
   margin-top : 8px;
 }
 
-.community-container {
-   max-width: 700px;
-   max-height: 700px;
-}
+
 
 @media only screen and (max-width: 600px) {
   body {

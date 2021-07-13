@@ -22,8 +22,6 @@ import auth from "./tools/firebase"
 import { useEffect, useRef } from "react"
 import { useAuthState } from 'react-firebase-hooks/auth';
 
-
-
 function App() {
 const [user] = useAuthState(auth)
 let isAuth = localStorage.getItem("logged")
@@ -36,7 +34,7 @@ const sendUser = async() => {
 
 useEffect(() => {
 sendUser()
-}, [sendUser])
+}, [])
 
   
   return (
