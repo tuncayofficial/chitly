@@ -9,6 +9,7 @@ import Button from '@material-ui/core/Button';
 
 function CommunityCard(props){
    const [communities, setCommunities] = useState([])
+   const [exists, setExists] = useState()
    const auth = firebase.auth()
    const user = auth.currentUser
 
@@ -23,16 +24,19 @@ function CommunityCard(props){
        fetch(url, options)
        .then(res => res.json())
        .then(data => {
+           if(data.forEach(community => community.members.includes(user && user.displayName))){
+               setExists(true)
+           }
            setCommunities(data)
         })
    }
 
-    function handleJoin(communityName, user, axios){
-        const exists = localStorage.setItem(communityName, true)
+    function handleJoin(communityID, user, axios){
+        const exists = localStorage.setItem(communityID, true)
         console.log(true)
     const url = "http://localhost:8080/addMember"
     const data = {
-        communityName,
+        communityID,
         user : user && user.displayName
     }
     const options = {
@@ -50,29 +54,28 @@ function CommunityCard(props){
     })
 }
 
-   const handleQuit = async(communityName) => {
-    const exists = await localStorage.setItem(communityName, false)
-    console.log(false)
-    const url = "http://localhost:8080/quitMember"
-    const data = {
-        communityName,
-        user : user && user.displayName
-    }
-    const options = {
-        method : "POST",
-        header : {
-            "Content-Type" : "application/x-www-form-urlencoded"
-        },
-        body : data
-    }
+function handleQuit(communityID, user, axios){
+    const exists = localStorage.setItem(communityID, true)
+    console.log(true)
+const url = "http://localhost:8080/quitMember"
+const data = {
+    communityID,
+    user : user && user.displayName
+}
+const options = {
+    method : "POST",
+    header : {
+        "Content-Type" : "application/x-www-form-urlencoded"
+    },
+    body : data
+}
 
-     axios.post(url, data, {
-        header : {
-            "Content-Type" : "application/x-www-form-urlencoded"
-        }
-    })
-    
-   }
+axios.post(url, data, {
+    header : {
+        "Content-Type" : "application/x-www-form-urlencoded"
+    }
+})
+}
 
     useEffect(()=>{
         fetchCommunities()
@@ -94,7 +97,7 @@ function CommunityCard(props){
                       <span className="id">Community ID : {community._id}</span>
                       <span className="members">Member count : {community.members.length}</span>
                    </div>
-                   {localStorage.getItem(community.name) ?  (<button style = {{ backgroundColor : "red"}} onClick={() => handleQuit(community.name, user, axios)}>Quit</button>) : (<button onClick={() => handleJoin(community.name, user, axios)}>Join</button>)  }
+                   {community.members.includes(user && user.displayName) ?  (<button style = {{ backgroundColor : "red"}} onClick={() => handleQuit(community._id, user, axios)}>Quit</button>) : (<button onClick={() => handleJoin(community._id, user, axios)}>Join</button>)  }
                    </div>
                )
            })}

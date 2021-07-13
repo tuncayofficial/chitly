@@ -24,9 +24,9 @@ const findCommunity = async(req, res, name) => {
   })
 }
 
-const addMember = async(req, res, communityName, user) => {
+const addMember = async(req, res, communityID, user) => {
     Community.updateOne(
-      {name : communityName},
+      {_id : communityID},
       { $push : { members : user } },
       function(err, result){
         if(err) throw err;
@@ -35,9 +35,9 @@ const addMember = async(req, res, communityName, user) => {
     )
 }
 
-const quitFromCommunity = async(req, res, communityName, user) => {
+const quitFromCommunity = async(req, res, communityID, user) => {
   Community.updateOne(
-    {name : communityName},
+    {_id : communityID},
     { $pull : { members : user } },
     function(err, result){
       if(err) throw err;

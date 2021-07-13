@@ -96,15 +96,15 @@ app.get("/topics", (req, res) =>{
 
 app.post("/addMember", (req, res) => {
   let { addMember } = communityControllers
-  let {  communityName, user } = req.body
-  addMember(req, res, communityName, user)
+  let {  communityID, user } = req.body
+  addMember(req, res, communityID, user)
   console.log(req.body)
 })
 
 app.post("/quitMember", (req, res) => {
   let { quitFromCommunity } = communityControllers
-  let {  communityName, user } = req.body
-  quitFromCommunity(req, res, communityName, user)
+  let { communityID, user } = req.body
+  quitFromCommunity(req, res, communityID, user)
   console.log(req.body)
 })
 
