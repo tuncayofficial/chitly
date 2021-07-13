@@ -4,6 +4,29 @@ body {
     font-family : "Montserrat", sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #3500D3;
+    color : white;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: gray; 
+  border-radius: 10px;
+  position: absolute;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: gray; 
 }
 
 .container {
@@ -51,12 +74,12 @@ button:active {
   display : flex;
   align-items: center;
   justify-content: space-around;
-  background-color: #426cb4;
+  background-color: #190061;
   width : 100%;
 }
 
 .card {
-  border : 0.5px solid black;
+ /* border : 1px solid black; */
   padding : 10px;
   transition : 0.3s ease;
   margin : 50px; 
@@ -65,12 +88,13 @@ button:active {
   height: 200px;
   display : inline-block;
   text-align: center;
+  background-color: #282828;
 }
 
 .card:hover {
-  position: relative;
-  bottom : 10px;
-  background : black;
+ /* position: relative;
+  bottom : 10px; */
+  transform: scale(1.05);
   color : white;
 }
 

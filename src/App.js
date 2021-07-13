@@ -39,7 +39,7 @@ sendUser()
         <Route exact path = "/" render = {Landing} />
         <Route exact path = "/about" render = {About} />
         <Route exact path = "/communities" render = {Communities} />
-        {isAuth ?  (<Route exact path = "/profile" render = {Dashboard} />) : ""}
+        <Route exact path = "/profile" render = {Dashboard} />
         </AuthProvider>
         </Switch>
        </div>
