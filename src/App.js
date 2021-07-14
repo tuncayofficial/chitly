@@ -8,6 +8,7 @@ import Navbar from './components/Navbar'
 import Communities from "./components/Pages/Communities"
 import SpecificCommunity from './components/Pages/SpecificCommunity';
 import Footer from "./components/Footer"
+import Register from "./components/Pages/Register"
 
 // Contexts
 import AuthProvider from "./components/context/AuthContext"
@@ -44,11 +45,12 @@ sendUser()
       <Navbar />
       <Switch>
         <AuthProvider>
-        <Route exact path = "/" render = {Landing} />
-        <Route exact path = "/about" render = {About} />
-        <Route exact path = "/communities" render = {Communities} />
-        <Route exact path = "/profile" render = {Dashboard} />
-        <Route path = "/community/:communityId" render = {SpecificCommunity} />
+        <Route exact path = "/" component = {Landing} />
+        <Route exact path = "/about" component = {About} />
+        <Route exact path = "/communities" component = {Communities} />
+        <Route exact path = "/profile" component = {Dashboard} />
+        <Route path = "/community/:communityId" component = {SpecificCommunity} />
+        <Route exact path = "/register" component = {Register} />
         </AuthProvider>
         </Switch>
         <Footer />

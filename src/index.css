@@ -94,8 +94,8 @@ button:active {
 }
 
 .card:hover {
- /* position: relative;
-  bottom : 10px; */
+  background-color: red;
+  color: white;
   transform: scale(1.05);
 }
 
