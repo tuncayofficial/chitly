@@ -127,11 +127,12 @@ fieldset div {
   margin-bottom: 10px;
 }
 
-input {
-  border : 0.5px solid black;
+fieldset .nickname input {
+  border : 0.5px solid white;
   padding : 15px;
   border-radius: 6px;
-  background-color: transparent;
+  background-color: white;
+  color : black;
 }
 
 input:focus {
@@ -186,6 +187,6 @@ footer {
 
 @media only screen and (max-width: 600px) {
   body {
-    zoom : 80%;
+    zoom : 50%;
   }
 }

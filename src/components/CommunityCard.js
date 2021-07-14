@@ -52,6 +52,8 @@ function CommunityCard(props){
             "Content-Type" : "application/x-www-form-urlencoded"
         }
     })
+
+    window.location.reload()
 }
 
 function handleQuit(communityID, user, axios){
@@ -75,6 +77,8 @@ axios.post(url, data, {
         "Content-Type" : "application/x-www-form-urlencoded"
     }
 })
+
+  window.location.reload()
 }
 
     useEffect(()=>{

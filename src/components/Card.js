@@ -33,7 +33,7 @@ function Card(props){
   }
   
   useEffect(() => {
-     getFirstUser()
+    getFirstUser()
      getSecondUser()
      getThirdUser()   
   }, [])
