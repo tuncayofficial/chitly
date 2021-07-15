@@ -21,7 +21,6 @@ function Landing(){
         <div align = "center">
            <h1>Avaliable communities</h1>
                  <CommunityInfo />
-                 <br /><br /><br /><br /><br /><br /><br /><br />
         </div>
         </div>
     )

@@ -48,12 +48,11 @@ sendUser()
         <Route exact path = "/" component = {Landing} />
         <Route exact path = "/about" component = {About} />
         <Route exact path = "/communities" component = {Communities} />
-        <Route exact path = "/profile" component = {Dashboard} />
+        {user ? <Route exact path = "/profile" component = {Dashboard} /> : ""}
         <Route path = "/community/:communityId" component = {SpecificCommunity} />
         <Route exact path = "/register" component = {Register} />
         </AuthProvider>
         </Switch>
-        <Footer />
        </div>
     </Router>
   );

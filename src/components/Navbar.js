@@ -12,6 +12,7 @@ import 'firebase/firestore';
 import 'firebase/auth';
 import { useState, useEffect, useRef } from "react"
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { BiLogIn } from "react-icons/bi"
 
 function Navbar(props){
     const auth = firebase.auth()
@@ -24,7 +25,7 @@ function Navbar(props){
        <NavbarElements location = "/about" text = "About" />
        <NavbarElements location = "/posts" text = "Posts" />
        <NavbarElements location = "/communities" text = "Communities" />
-       {user ? (<a href = "/profile"><img referrerPolicy="no-referrer" alt = "pfp" style = {photoStyle} width = "60px" height = "60px" src = {user && user.photoURL} /></a>) : (<Login />)}
+       {user ? (<a href = "/profile"><img referrerPolicy="no-referrer" alt = "pfp" style = {photoStyle} width = "60px" height = "60px" src = {user && user.photoURL} /></a>) : (<a href = "/register"><BiLogIn  style = {{ cursor : "pointer" }} size = {35} /></a>)}
        </nav>
        </Router>
    )

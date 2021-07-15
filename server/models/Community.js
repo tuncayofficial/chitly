@@ -6,7 +6,8 @@ const CommunitySchema = new Schema({
     avatar : String,
     description : String,
     banner : String,
-    members : Array
+    members : Array,
+    owner : String
 })
 
 const Community = mongoose.model("Community", CommunitySchema)

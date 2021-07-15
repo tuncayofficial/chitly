@@ -4,6 +4,7 @@ import 'firebase/auth';
 import { useState, useEffect, useRef } from "react"
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
+import { FcGoogle } from "react-icons/fc"
 
 function Login(props){
 
@@ -16,7 +17,7 @@ function Login(props){
       }
       return (
         <div>
-          <button onClick={signInWithGoogle}>Sign In</button>
+          <FcGoogle size = {35} style = {{ cursor : "pointer" }} onClick={signInWithGoogle} />
         </div>
       )
 }
