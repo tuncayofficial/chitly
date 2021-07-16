@@ -16,13 +16,28 @@ const AuthProvider = ({ children }) => {
 
     const auth = firebase.auth()
     const [user, setUser] = useState({})
+    const [error, setError] = useState()
 
-   async function register(email, password){
+   async function register(email, password, nickname){
      await auth.createUserWithEmailAndPassword(email, password)
+     .then(async function () {
+        const update = {
+            displayName: nickname,
+            photoURL: 'https://my-cdn.com/assets/user/123.png',
+          };
+          
+          await firebase.auth().currentUser.updateProfile(update);
+      })
     }
 
     function login(email, password){
         auth.signInWithEmailAndPassword(email, password)
+
+        .catch(error =>{
+            // eslint-disable-next-line default-case
+            setError(error.message)
+            }
+        )
     }
 
     useEffect(() => {
@@ -36,7 +51,8 @@ const AuthProvider = ({ children }) => {
     const value = {
         user,
         login,
-        register
+        register,
+        error
     }
 
     return (

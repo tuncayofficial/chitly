@@ -9,6 +9,7 @@ import Communities from "./components/Pages/Communities"
 import SpecificCommunity from './components/Pages/SpecificCommunity';
 import Footer from "./components/Footer"
 import Register from "./components/Pages/Register"
+import LoginPage from './components/Pages/LoginPage';
 
 // Contexts
 import AuthProvider from "./components/context/AuthContext"
@@ -51,6 +52,7 @@ sendUser()
         {user ? <Route exact path = "/profile" component = {Dashboard} /> : ""}
         <Route path = "/community/:communityId" component = {SpecificCommunity} />
         <Route exact path = "/register" component = {Register} />
+        <Route exact path = "/login" component = {LoginPage} />
         </AuthProvider>
         </Switch>
        </div>

@@ -1,3 +1,5 @@
+import "../styles/alerts.css"
+
 function RegisterAlert({ message }){
     return (
       <div className="register-alert">
@@ -5,3 +7,5 @@ function RegisterAlert({ message }){
       </div>
     )
 }
+
+export default RegisterAlert
