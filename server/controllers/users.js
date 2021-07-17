@@ -19,11 +19,12 @@ function updateUser(req, res, id, newUsername){
    })
 }
 
-async function createUser(req, res, username, email, password, bio){
+async function createUser(req, res, username, email, password, bio, avatar){
    const userObject = {
        username,
        email,
-       password
+       password,
+       avatar
    }
 
    const user = new User(userObject)
@@ -33,9 +34,24 @@ async function createUser(req, res, username, email, password, bio){
    })
 }
 
+async function createFirebaseUser(req, res, username, email, avatar){
+    const userObject = {
+        username,
+        email,
+        avatar
+    }
+ 
+    const user = new User(userObject)
+ 
+    await user.save().then(newUser =>{
+        res.json(newUser)
+    })
+ }
+
 module.exports = {
     updateUser,
     getAllUsers,
     getSingleUser,
-    createUser
+    createUser,
+    createFirebaseUser
 }

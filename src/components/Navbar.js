@@ -20,7 +20,8 @@ function Navbar(props){
     const [user] = useAuthState(auth);
    return (
        <Router>
-        <nav className = "menu">  
+        <nav className = "menu">
+       <img src = "https://media.discordapp.net/attachments/853272906162896927/865604570369359882/c_logo.png?width=406&height=406" width = "80px" height = "80px" />  
        <NavbarElements location ="/" text = "Home" />
        <NavbarElements location = "/about" text = "About" />
        <NavbarElements location = "/posts" text = "Posts" />

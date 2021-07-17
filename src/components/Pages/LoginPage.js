@@ -19,6 +19,8 @@ const useAlertStyles = makeStyles((theme) => ({
     width: '70%',
     '& > * + *': {
       marginTop: theme.spacing(2),
+      justifyContent : "center",
+      alignItems : "center"
     },
   },
 }));
@@ -56,20 +58,28 @@ function LoginPage(){
               </div>
               <div className="username">
               <label>E-mail</label><br />
-                  <input id="outlined-basic" label="Outlined" variant="outlined" type = "email" onChange={e => setEmail(e.target.value)} />
+                  <input style = {inputStyles} id="outlined-basic" label="Outlined" variant="outlined" type = "email" onChange={e => setEmail(e.target.value)} />
               </div>
               <div className="username">
               <label>Password</label><br />
-                  <input id="outlined-basic" label="Outlined" variant="outlined" type = "password" onChange={e => setPassword(e.target.value)} />
+                  <input style = {inputStyles}  id="outlined-basic" label="Outlined" variant="outlined" type = "password" onChange={e => setPassword(e.target.value)} />
               </div>
               <button disabled = {loading} type="submit">Login</button>
               <div className="social-media">
                   Or use social media apps to create profile : <br />
                   <Login />
               </div>
+              <div className="direct">
+                  Don't have an account? <a style = {{ color : "dodgerblue" }} href = "/register">Create account</a>
+              </div>
            </form>
        </div>
    )
+}
+
+const inputStyles = {
+  position : "relative",
+  right : "30px"
 }
 
 export default LoginPage

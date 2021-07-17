@@ -7,6 +7,8 @@ function Card(props){
   const [firstCard, setFirstCard] = useState("")
   const [secondCard, setSecondCard] = useState("")
   const [thirdCard, setThirdCard] = useState("")
+  const [avatar, setAvatar] = useState()
+  const direct = "/users/" + firstCard.username
 
   const getFirstUser = ()=>{
     fetch("http://localhost:8080/user")
@@ -31,32 +33,41 @@ function Card(props){
       setThirdCard(data)
     })
   }
+
+  var stringToHTML = function (str) {
+    var parser = new DOMParser();
+    var doc = parser.parseFromString(str, 'text/html');
+    return doc.body;
+  };
+  
   
   useEffect(() => {
     getFirstUser()
-     getSecondUser()
-     getThirdUser()   
+    getSecondUser()
+    getThirdUser()
   }, [])
+
+ let image = stringToHTML(firstCard.avatar)
 
     return (
       <p>
       <div className="card">
+      <div className="banner">
+        <img alt = "pfp" style = {{ borderRadius : "100%" }} src = {firstCard.avatar} />
+      </div>
         <br /><br />
-         <div className = "title">{firstCard.username}</div><br />
-         <div className = "description">{firstCard.status}</div><br />
-         <Button title = "Add friend" />
+         <div className = "title"><h2>{firstCard.username}</h2></div><br />
+         <a style = {{ color : "dodgerBlue", padding : "0",  }} href = {direct}><h3>About user</h3></a>
       </div>
       <div className="card">
       <br /><br />
-       <div className = "title">{secondCard.username}</div><br />
-       <div className = "description">{secondCard.status}</div><br />
-       <Button title = "Add friend" />
+       <div className = "title"><h2>{secondCard.username}</h2></div><br />
+       <a style = {{ color : "dodgerBlue", padding : "0",  }} href = {direct}><h3>About user</h3></a>
     </div>
     <div className="card">
     <br /><br />
-     <div className = "title">{thirdCard.username}</div><br />
-     <div className = "description">{thirdCard.status}</div><br />
-     <Button title = "Add friend" />
+     <div className = "title"><h2>{thirdCard.username}</h2></div><br />
+     <a style = {{ color : "dodgerBlue", padding : "0",  }} href = {direct}><h3>About user</h3></a>
   </div>
   </p>
     )

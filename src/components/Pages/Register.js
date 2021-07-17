@@ -41,15 +41,15 @@ function Register(){
               </div>
               <div className="username">
                   <label>Username</label>
-                  <input  type = "text" onChange={e => setNickname(e.target.value)} />
+                  <input style = {inputStyles} type = "text" onChange={e => setNickname(e.target.value)} />
               </div>
               <div className="username">
               <label>E-mail</label><br />
-                  <input id="outlined-basic" label="Outlined" variant="outlined" type = "email" onChange={e => setEmail(e.target.value)} />
+                  <input style = {inputStyles} id="outlined-basic" label="Outlined" variant="outlined" type = "email" onChange={e => setEmail(e.target.value)} />
               </div>
               <div className="username">
               <label>Password</label>
-                  <input id="outlined-basic" label="Outlined" variant="outlined" type = "password" onChange={e => setPassword(e.target.value)} />
+                  <input style = {inputStyles} id="outlined-basic" label="Outlined" variant="outlined" type = "password" onChange={e => setPassword(e.target.value)} />
               </div>
               <button disabled = {loading} type="submit">Register</button>
               <div className="social-media">
@@ -63,5 +63,10 @@ function Register(){
        </div>
    )
 }
+
+const inputStyles = {
+    position : "relative",
+    right : "30px"
+  }
 
 export default Register

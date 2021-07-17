@@ -26,13 +26,13 @@ import { useEffect, useRef } from "react"
 import { useAuthState } from 'react-firebase-hooks/auth';
 
 function App() {
-const [user] = useAuthState(auth)
+const user = auth.currentUser
 let isAuth = localStorage.getItem("logged")
 
 // eslint-disable-next-line react-hooks/exhaustive-deps
 const sendUser = async() => {
   const url = "http://localhost:8080/sendUser"
- axios.post(url, user)
+  axios.post(url, user && user)
 }
 
 useEffect(() => {

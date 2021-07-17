@@ -5,6 +5,9 @@ const cors = require("cors")
 const dotenv = require("dotenv")
 const session = require("express-session")
 const fetch = require("node-fetch")
+const {createAvatar} = require('@dicebear/avatars');
+const style = require("@dicebear/avatars-male-sprites")
+
 dotenv.config()
 
 // File importing
@@ -56,13 +59,20 @@ app.get("/user", async(req, res) => {
 })
 
 app.post("/register", (req, res)=>{
-    const { createUser } = userControllers
-    const { username, email, password, bio } = req.body
-    createUser(req, res, username, email, password, bio)
+  const { createUser } = userControllers
+  const { username, email, password, bio } = req.body
+  createUser(req, res, username, email, password, bio)
 })
 
 app.post("/sendUser", (req, res)=>{
-   res.json(req.body)
+    User.exists({ username : req.body.displayName }).then((err, doc) =>{
+      if(err) throw err
+      if(!doc){
+        const { createFirebaseUser } = userControllers
+        const { displayName, email, photoURL } = req.body
+        createFirebaseUser(req, res, displayName, email, photoURL )
+      }
+    })
 })
 
 app.post("/getCommunity", async(req, res) =>{

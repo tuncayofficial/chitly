@@ -81,9 +81,9 @@ axios.post(url, data, {
   window.location.reload()
 }
 
-    useEffect(()=>{
-        fetchCommunities()
-    },[])
+useEffect(()=>{
+    fetchCommunities()
+ },[])
 
 
 
@@ -97,11 +97,12 @@ axios.post(url, data, {
                      <img alt = "banner" src = {community.banner} />
                    </div>
                    <div className="info">
-                      <span className="name">Community name : {community.name}</span>
-                      <span className="id">Community ID : {community._id}</span>
-                      <span className="members">Member count : {community.members.length}</span>
+                      <span className="name"><strong>Community name : {community.name}</strong></span>
+                      <span className="id"><strong>Community ID : {community._id}</strong></span>
+                      <span className="members"><strong>Member count : {community.members.length}</strong></span>
                    </div>
-                   {community.members.includes(user && user.displayName) ?  (<button style = {{ backgroundColor : "red"}} onClick={() => handleQuit(community._id, user, axios)}>Quit</button>) : (<button onClick={() => handleJoin(community._id, user, axios)}>Join</button>)  }
+                   {community.members.includes(user && user.displayName)?  (<button style = {{ backgroundColor : "red"}} onClick={() => handleQuit(community._id, user, axios)}>Quit</button>) : (<button onClick={() => handleJoin(community._id, user, axios)}>Join</button>)  }
+                   <a style = {{ color : "dodgerBlue", padding : "0",  }} href = "/community/{community.name}" ><h4>Go to community page</h4></a>
                    </div>
                )
            })}
