@@ -1,5 +1,5 @@
 import centerObjects from "../tools/center";
-import { useEffect, useState } from "react"
+import React,{ useEffect, useState } from "react"
 import Button from "./Button";
 
 function Card(props){

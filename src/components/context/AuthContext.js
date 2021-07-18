@@ -4,7 +4,8 @@ import 'firebase/firestore';
 import 'firebase/auth';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
+import { PropTypes } from "prop-types";
 
 const Authentication = createContext()
 export function useAuth(){
@@ -61,5 +62,9 @@ const AuthProvider = ({ children }) => {
     </Authentication.Provider>
     )
 }
+
+AuthProvider.propTypes = {
+    children: PropTypes.any
+};
 
 export default AuthProvider
