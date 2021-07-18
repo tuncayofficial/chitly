@@ -70,7 +70,7 @@ function LoginPage(){
                   <Login />
               </div>
               <div className="direct">
-                  Don't have an account? <a style = {{ color : "dodgerblue" }} href = "/register">Create account</a>
+                  Don&lsquo;t have an account? <a style = {{ color : "dodgerblue" }} href = "/register">Create account</a>
               </div>
            </form>
        </div>
