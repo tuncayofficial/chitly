@@ -65,7 +65,7 @@ app.post("/register", (req, res)=>{
 })
 
 app.post("/sendUser", (req, res)=>{
-    User.exists({ username : req.body.displayName }).then((err, doc) =>{
+  /*  User.exists({ username : req.body.displayName }).then((err, doc) =>{
       if(err) throw err
       if(!doc){
         const { createFirebaseUser } = userControllers
@@ -73,6 +73,7 @@ app.post("/sendUser", (req, res)=>{
         createFirebaseUser(req, res, displayName, email, photoURL )
       }
     })
+    */
 })
 
 app.post("/getCommunity", async(req, res) =>{

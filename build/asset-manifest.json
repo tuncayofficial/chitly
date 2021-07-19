@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/chitly/static/css/main.5dd7c962.chunk.css",
+    "main.js": "/chitly/static/js/main.1d47d731.chunk.js",
+    "main.js.map": "/chitly/static/js/main.1d47d731.chunk.js.map",
+    "runtime-main.js": "/chitly/static/js/runtime-main.5b0e0102.js",
+    "runtime-main.js.map": "/chitly/static/js/runtime-main.5b0e0102.js.map",
+    "static/js/2.940d5b19.chunk.js": "/chitly/static/js/2.940d5b19.chunk.js",
+    "static/js/2.940d5b19.chunk.js.map": "/chitly/static/js/2.940d5b19.chunk.js.map",
+    "static/js/3.22ebea8d.chunk.js": "/chitly/static/js/3.22ebea8d.chunk.js",
+    "static/js/3.22ebea8d.chunk.js.map": "/chitly/static/js/3.22ebea8d.chunk.js.map",
+    "index.html": "/chitly/index.html",
+    "static/css/main.5dd7c962.chunk.css.map": "/chitly/static/css/main.5dd7c962.chunk.css.map",
+    "static/js/2.940d5b19.chunk.js.LICENSE.txt": "/chitly/static/js/2.940d5b19.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.5b0e0102.js",
+    "static/js/2.940d5b19.chunk.js",
+    "static/css/main.5dd7c962.chunk.css",
+    "static/js/main.1d47d731.chunk.js"
+  ]
+}
