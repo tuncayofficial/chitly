@@ -9,13 +9,10 @@ function Information(){
    const auth = firebase.auth()
    const user = auth.currentUser
    const [view, setView] = useState(false)
-   const [value, setValue] = useState("")
+   const value = useRef()
 
    const handleInput = (e) =>{
-       const text = e.target.value.toString()
-       setValue(text.concat(" "))
-       localStorage.setItem("status",value)
-       console.log(user)
+       localStorage.setItem("status", value.current.value)
    }
 
    const handleView = () =>{
@@ -28,7 +25,7 @@ function Information(){
                <legend>Profile information</legend>
                <div className="nickname">Nickname : { user && user.displayName }</div>
                <div className="nickname">User ID : { user && user.uid }</div>
-               <div className="nickname">Status : {view ? (<input className="statusInput" onChange = {handleInput} />) : localStorage.getItem("status") } <button style = {{ marginLeft : "10px" }} onClick = {handleView}>Change</button></div>
+               <div className="nickname">Status : {view ? (<input ref = {value} className="statusInput" />) : localStorage.getItem("status") } <button style = {{ marginLeft : "10px" }} onClick = {handleView}>Change</button></div>
            </fieldset>
        </div>
    )

@@ -48,7 +48,7 @@ sendUser()
         <Route exact path = "/chitly/" component = {Landing} />
         <Route exact path = "/chitly/about" component = {About} />
         <Route exact path = "/chitly/communities" component = {Communities} />
-        {user ? <Route exact path = "/chitly/profile" component = {Dashboard} /> : ""}
+        <Route exact path = "/chitly/profile" component = {Dashboard} />
         <Route path = "/chitly/community/:communityId" component = {SpecificCommunity} />
         <Route exact path = "/chitly/register" component = {Register} />
         <Route exact path = "/chitly/login" component = {LoginPage} />
