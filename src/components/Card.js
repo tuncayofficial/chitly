@@ -53,7 +53,6 @@ function Card(props){
       <p>
       <div className="card">
       <div className="banner">
-        <img alt = "pfp" style = {{ borderRadius : "100%" }} src = {firstCard.avatar} />
       </div>
         <br /><br />
          <div className = "title"><h2>{firstCard.username}</h2></div><br />

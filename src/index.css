@@ -220,6 +220,24 @@ footer {
 
 @media only screen and (max-width: 600px) {
   body {
-    zoom : 70%;
+    zoom : 50%;
   }
+}
+
+.multiple-nav-ul {
+  position: absolute;
+  background-color: white;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.multiple-nav-ul li a{
+  color: black;
+}
+
+.multiple-nav-ul li:hover {
+    background-color: black;
 }

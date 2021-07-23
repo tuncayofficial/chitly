@@ -13,11 +13,17 @@ import 'firebase/auth';
 import { useState, useEffect, useRef } from "react"
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { BiLogIn } from "react-icons/bi"
+import MultipleNavElem from "./MultipleNavElem";
 
 function Navbar(props){
     const auth = firebase.auth()
+    const [open, setOpen] = useState(false)
 
     const [user] = useAuthState(auth);
+    function handleOpen(){
+        setOpen(prev => !prev)
+    }
+
    return (
        <Router>
         <nav className = "menu">
@@ -25,7 +31,7 @@ function Navbar(props){
        <NavbarElements location ="/chitly/" text = "Home" />
        <NavbarElements location = "/chitly/about" text = "About" />
        <NavbarElements location = "/chitly/posts" text = "Posts" />
-       <NavbarElements location = "/chitly/communities" text = "Communities" />
+       <NavbarElements location = "/communities" text = "Communities" />
        {user ? (<a href = "/chitly/profile"><img referrerPolicy="no-referrer" alt = "pfp" style = {photoStyle} width = "60px" height = "60px" src = {user && user.photoURL} /></a>) : (<a href = "/chitly/register"><BiLogIn  style = {{ cursor : "pointer" }} size = {35} /></a>)}
        </nav>
        </Router>
