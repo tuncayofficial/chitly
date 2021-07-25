@@ -45,13 +45,13 @@ sendUser()
       <Navbar />
       <Switch>
         <AuthProvider>
-        <Route exact path = "/chitly/" component = {Landing} />
-        <Route exact path = "/chitly/about" component = {About} />
-        <Route exact path = "/chitly/communities" component = {Communities} />
-        <Route exact path = "/chitly/profile" component = {Dashboard} />
-        <Route path = "/chitly/community/:communityId" component = {SpecificCommunity} />
-        <Route exact path = "/chitly/register" component = {Register} />
-        <Route exact path = "/chitly/login" component = {LoginPage} />
+        <Route exact path = "/" component = {Landing} />
+        <Route exact path = "/about" component = {About} />
+        <Route exact path = "/communities" component = {Communities} />
+        <Route exact path = "/profile" component = {Dashboard} />
+        <Route path = "/community/:communityId" component = {SpecificCommunity} />
+        <Route exact path = "/register" component = {Register} />
+        <Route exact path = "/login" component = {LoginPage} />
         </AuthProvider>
         </Switch>
        </div>
