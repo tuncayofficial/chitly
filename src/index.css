@@ -16,6 +16,7 @@ body {
 
 ::-webkit-scrollbar {
   width: 10px;
+  background-color: #262a30;
 }
 
 /* Track */
@@ -226,6 +227,25 @@ footer {
 
 .info span {
   white-space: nowrap; 
+}
+
+.community-menu ul {
+  position: absolute;
+  width : 200px;
+  height: 200px;
+  border-radius: 7px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: wheat;
+  flex-direction: column;
+  background-color: rgb(10, 13, 219);
+  margin: auto;
+}
+
+.community-menu ul li {
+  position: relative;
+  right : 24px;
 }
 
 @media only screen and (max-width: 600px) {

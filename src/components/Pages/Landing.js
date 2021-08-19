@@ -1,7 +1,7 @@
 import Card from "../Card"
 import CommunityInfo from "../CommunityInfo"
 import { useState, useContext } from "react"
-import { useAuth }from "../context/AuthContext"
+import { useAuth } from "../context/AuthContext"
 import "../styles/typewriter.css"
 
 function Landing(){
