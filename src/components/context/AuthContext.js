@@ -18,13 +18,14 @@ const AuthProvider = ({ children }) => {
     const auth = firebase.auth()
     const [user, setUser] = useState({})
     const [error, setError] = useState()
+    const [creationDate, setCreationDate] = useState()
 
    async function register(email, password, nickname){
      await auth.createUserWithEmailAndPassword(email, password)
      .then(async function () {
         const update = {
             displayName: nickname,
-            photoURL: 'https://my-cdn.com/assets/user/123.png',
+            photoURL: 'https://media.discordapp.net/attachments/868239363480383508/878966176028459008/360_F_64676383_LdbmhiNM6Ypzb3FM4PPuFP9rHe7ri8Ju.png',
           };
           
           await firebase.auth().currentUser.updateProfile(update);

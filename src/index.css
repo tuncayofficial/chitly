@@ -231,7 +231,7 @@ footer {
 
 .community-menu ul {
   position: absolute;
-  width : 200px;
+  width : 150px;
   height: 200px;
   border-radius: 7px;
   display: flex;
@@ -245,6 +245,7 @@ footer {
 
 .community-menu ul li {
   position: relative;
+  width : 160px;
   right : 24px;
 }
 
