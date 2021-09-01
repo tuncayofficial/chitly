@@ -10,6 +10,8 @@ import SpecificCommunity from './components/Pages/SpecificCommunity';
 import Footer from "./components/Footer"
 import Register from "./components/Pages/Register"
 import LoginPage from './components/Pages/LoginPage';
+import Chat from './components/Pages/Chat'
+import News from './components/alerts/News'
 
 // Contexts
 import AuthProvider from "./components/context/AuthContext"
@@ -27,6 +29,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 
 function App() {
 const user = auth.currentUser
+const news = localStorage.getItem("news")
 let isAuth = localStorage.getItem("logged")
 
 const sendUser = async() => {
@@ -43,6 +46,7 @@ sendUser()
     <Router>
       <div className = "container">
       <Navbar />
+      {news ? (<News />) : ""}
       <Switch>
         <AuthProvider>
         <Route exact path = "/" component = {Landing} />
@@ -52,6 +56,7 @@ sendUser()
         <Route path = "/community/:communityId" component = {SpecificCommunity} />
         <Route exact path = "/register" component = {Register} />
         <Route exact path = "/login" component = {LoginPage} />
+        <Route exact path = "/chat" component = {Chat} />
         </AuthProvider>
         </Switch>
        </div>

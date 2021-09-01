@@ -11,6 +11,7 @@ import { HiDotsVertical } from "react-icons/hi"
 function CommunityCard(props){
    const [communities, setCommunities] = useState([])
    const [exists, setExists] = useState()
+   const [selected, setSelected] = useState([])
    const [menu, setMenu] = useState(false)
    const auth = firebase.auth()
    const user = auth.currentUser
@@ -83,9 +84,6 @@ axios.post(url, data, {
   window.location.reload()
 }
 
-const handleMenuClick = () =>{
-  setMenu(previous => !previous)
-}
 
 useEffect(()=>{
     fetchCommunities()
@@ -97,17 +95,6 @@ useEffect(()=>{
            {communities.map(function(community) {
               return (
                    <div key = {community._id} className="community-card">
-                       <HiDotsVertical onClick = {handleMenuClick} style = {{ cursor : "pointer", position : "relative", left : "180px" }} size = {23} />
-                      {menu && <div className="community-menu">
-                         <ul>
-                          <li>
-                             Save
-                          </li>
-                          <li>
-                             Report
-                          </li>
-                         </ul>
-                     </div>}
                    <div className="banner">
                      <img alt = "banner" src = {community.banner} />
                    </div>

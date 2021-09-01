@@ -249,6 +249,41 @@ footer {
   right : 24px;
 }
 
+.news {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height : 70px;
+  background-color: #03fc6f;
+  color: black;
+}
+
+.news a {
+  color : rgb(7, 71, 134);
+}
+
+.specifies {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.specify {
+  width : 250px;
+  height : 40px;
+  border-radius: 7px;
+  text-align: center;
+  margin-bottom : 30px;
+  margin-left: 30px;
+  padding : 15px;
+}
+
+.curve {
+  background-color: #03fc6f;
+}
+
 @media only screen and (max-width: 600px) {
   body {
     zoom : 50%;
@@ -272,3 +307,4 @@ footer {
 .multiple-nav-ul li:hover {
     background-color: black;
 }
+

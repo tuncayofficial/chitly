@@ -3,6 +3,7 @@ import CommunityInfo from "../CommunityInfo"
 import { useState, useContext } from "react"
 import { useAuth } from "../context/AuthContext"
 import "../styles/typewriter.css"
+import Specifies from "../alerts/Specifies"
 
 function Landing(){
     const {user} = useAuth()
@@ -21,6 +22,10 @@ function Landing(){
         <div align = "center">
            <h1>Avaliable communities</h1>
                  <CommunityInfo />
+        </div>
+        <div className = "specifies">
+            <h2>Chitly specifies :</h2>
+            <Specifies text = "Testing" color = "blue" />
         </div>
         </div>
     )
