@@ -268,20 +268,111 @@ footer {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .specify {
-  width : 250px;
-  height : 40px;
+  width : 600px;
+  height : 60px;
   border-radius: 7px;
   text-align: center;
   margin-bottom : 30px;
   margin-left: 30px;
   padding : 15px;
+  transition: 200ms all;
 }
 
-.curve {
-  background-color: #03fc6f;
+.specify:hover {
+  transform: scale(1.04);
+}
+
+.likebuttonpng{
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  bottom : -700px;
+  right : 40px;
+  transform: rotate(335deg);
+  transition: 200ms all;
+}
+
+.likebuttonpng:hover{
+   position: absolute;
+   bottom: -680px;
+}
+
+.starpng {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  bottom : -600px;
+  left : 40px;
+  transition: 200ms all;
+}
+
+.starpng:hover{
+  position: absolute;
+  bottom: -560px;
+}
+
+.laughpng {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  bottom : -1000px;
+  left : 40px;
+  transition: 200ms all;
+  transform: scale(1.06);
+}
+
+.laughpng:hover{
+  position: absolute;
+  bottom: -980px;
+}
+
+.topic-container {
+  background: #41295a;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #2F0743, #41295a);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #2F0743, #41295a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  height : 100px;
+  width : 1100px;
+  border-radius: 8px;
+  color : white;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.topic {
+  margin: 10px;
+  padding: 15px;
+  border-radius: 30px;
+  border: 2px solid red;
+  transition: 200ms ease-in-out;
+}
+
+.topic:hover {
+   background-color: red;
+   color: white;
+   cursor: pointer;
+}
+.labelbutton {
+  border: 3px solid dodgerblue;
+  margin-top : 25px;
+  border-radius: 100px;
+  padding : 22px;
+  position: relative;
+  font-size: 20px;
+  transition: 100ms ease-out;
+  text-align: center;
+}
+
+.labelbutton:hover {
+  background-color: dodgerblue;
 }
 
 @media only screen and (max-width: 600px) {

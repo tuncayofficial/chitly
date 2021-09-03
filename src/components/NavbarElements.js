@@ -4,7 +4,7 @@ function NavbarElements({ location, text }){
     return (
         <ul>
             <li>
-            <a href={location}>{text}</a>
+            <a href={location}><strong>{text}</strong></a>
             </li>
         </ul>
     )

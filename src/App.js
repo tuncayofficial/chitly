@@ -29,7 +29,6 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 
 function App() {
 const user = auth.currentUser
-const news = localStorage.getItem("news")
 let isAuth = localStorage.getItem("logged")
 
 const sendUser = async() => {
@@ -46,7 +45,7 @@ sendUser()
     <Router>
       <div className = "container">
       <Navbar />
-      {news ? (<News />) : ""}
+      <News />
       <Switch>
         <AuthProvider>
         <Route exact path = "/" component = {Landing} />

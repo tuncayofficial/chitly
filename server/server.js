@@ -95,11 +95,12 @@ app.post("/getSpecificCommunity", (req, res)=> {
 
 app.get("/topics", (req, res) =>{
   let topics = [
-    "Art",
     "Programming & Technology",
     "Move & TV Series",
     "Book Clubs",
-    "Cooking"
+    "Cooking",
+    "Art & Philosophy",
+    "Gaming"
   ]
 
   res.json(topics)
