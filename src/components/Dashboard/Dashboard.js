@@ -11,30 +11,15 @@ import {
 import Information from "./Information"
 
 function Dashboard(props){
-    const auth = firebase.auth()
-
-    const logout = async() =>{
-        try {
-      await auth.signOut()
-      localStorage.setItem("logged", false)
-    } catch(err) {
-        console.error(err)
-    }
- }
 
     return (
         <div>
         <br />
         <Information />
-        <button style = {logoutButtonStyle} onClick = {logout}>Log out</button>
         </div>
     )
 }
 
-const logoutButtonStyle = {
-    marginTop : "10px",
-    backgroundColor : "red"
-}
 
 
 export default Dashboard

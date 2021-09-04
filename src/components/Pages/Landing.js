@@ -18,7 +18,7 @@ function Landing(){
             <h3>Chitly is a platform that you can create communities, posts and more!</h3>
             <h1>Avaliable users</h1>
              <Card />
-             <a style = {{ color : "dodgerBlue", padding : "0",  }} href = "/users"><h3>See more users</h3></a>
+             <a style = {{ color : "dodgerBlue", padding : "0",  }} href = "/users"><h2>See more users</h2></a>
         </div>
         <div align = "center">
            <h1>Avaliable communities</h1>

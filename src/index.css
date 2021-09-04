@@ -203,7 +203,7 @@ footer {
 }
 
 .register form {
-  height: 650px;
+  height: 800px;
   width : 600px;
   margin: auto;
   margin-top: 50px;
@@ -337,7 +337,7 @@ footer {
   background: -webkit-linear-gradient(to right, #2F0743, #41295a);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right, #2F0743, #41295a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   height : 100px;
-  width : 1100px;
+  width : 1300px;
   border-radius: 8px;
   color : white;
   display: flex;
@@ -360,11 +360,12 @@ footer {
    color: white;
    cursor: pointer;
 }
+
 .labelbutton {
   border: 3px solid dodgerblue;
   margin-top : 25px;
   border-radius: 100px;
-  padding : 22px;
+  padding : 25px;
   position: relative;
   font-size: 20px;
   transition: 100ms ease-out;
@@ -373,6 +374,28 @@ footer {
 
 .labelbutton:hover {
   background-color: dodgerblue;
+}
+
+.dashboard {
+  width : 700px;
+  height: 300px;
+  background-color: #8BC6EC;
+  background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
+  font-weight: bold;
+  padding : 30px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  align-items: center;
+  justify-content: space-around;
+  color: black;
+  font-size: larger;
+}
+
+.section2 {
+  display: flex;
+  flex-direction: row !important;
 }
 
 @media only screen and (max-width: 600px) {

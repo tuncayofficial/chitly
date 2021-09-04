@@ -1,9 +1,10 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import axios from "axios"
 import { useAuth } from "../context/AuthContext"
 import { makeStyles } from '@material-ui/core/styles';
 import Login from "../Login"
 import GitHubLogin from "../GitHubLogin"
+import { TextField } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -21,6 +22,7 @@ function Register(){
     const [nickname, setNickname] = useState()
     const [email, setEmail] = useState()
     const [password, setPassword] = useState()
+    const [bio, setBio] = useState()
     const [loading, setLoading] = useState(false)
 
    function handleSubmit(e){
@@ -32,6 +34,17 @@ function Register(){
          setError(error.message)
      }
    }
+
+   useEffect(() =>{
+       const data = {
+           username : nickname,
+           email : email,
+           password : password,
+           bio : bio
+       }
+       axios.post("http://localhost:8080/register", data)
+       .then(res => console.log(res.data))
+   })
 
    return (
        <div className = "register">
@@ -50,6 +63,10 @@ function Register(){
               <div className="username">
               <label>Password</label>
                   <input style = {inputStyles} id="outlined-basic" label="Outlined" variant="outlined" type = "password" onChange={e => setPassword(e.target.value)} />
+              </div>
+              <div className="username">
+              <label>Short description</label>
+                  <TextField style = {inputStyles} id="outlined-basic" label="Outlined" variant="outlined" type = "text" onChange={e => setBio(e.target.value)} />
               </div>
               <button disabled = {loading} type="submit">Register</button>
               <div className="social-media">

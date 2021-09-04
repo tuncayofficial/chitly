@@ -12,7 +12,8 @@ const Topics = (props) =>{
     return (
        <div className = "topic-container">
            {topics.map(function(topic){
-               return (<div className = "topic" key = {topic}><strong>{topic}</strong></div>)
+               let route = "/topics/" + topic
+               return (<a href = {route} key = {topic}><div className = "topic" key = {topic}><strong>{topic}</strong></div></a>)
            })}
            
        </div>
