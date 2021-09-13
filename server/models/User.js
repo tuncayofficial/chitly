@@ -11,7 +11,10 @@ const UserSchema = new Schema({
         default : "Online"
     },
     bio : String,
-    notifications : Number
+    notifications : Number,
+    moderator : Boolean,
+    partnership : Boolean,
+    bot : Boolean
 })
 
 const User = mongoose.model("User", UserSchema)

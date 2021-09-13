@@ -1,6 +1,7 @@
-import centerObjects from "../tools/center";
 import React,{ useEffect, useState } from "react"
 import Button from "./Button";
+import { MdVerifiedUser } from "react-icons/md"
+import { AiOutlinePlus } from "react-icons/ai"
 
 function Card(props){
 
@@ -55,17 +56,17 @@ function Card(props){
       <div className="banner">
       </div>
         <br /><br />
-         <div className = "title"><h2>{firstCard.username}</h2></div><br />
+         <div className = "title"><h2>{firstCard.username}{firstCard.moderator ? (<abbr title = "Community Moderator"><MdVerifiedUser /></abbr>) : ""}</h2></div><br />
          <a style = {{ color : "dodgerBlue", padding : "0",  }} href = {direct}><h3>About user</h3></a>
       </div>
       <div className="card">
       <br /><br />
-       <div className = "title"><h2>{secondCard.username}</h2></div><br />
+       <div className = "title"><h2>{secondCard.username}{secondCard.moderator ? (<abbr title = "Community Moderator"><MdVerifiedUser /></abbr>) : ""}</h2></div><br />
        <a style = {{ color : "dodgerBlue", padding : "0",  }} href = {direct}><h3>About user</h3></a>
     </div>
     <div className="card">
     <br /><br />
-     <div className = "title"><h2>{thirdCard.username}</h2></div><br />
+     <div className = "title"><h2>{thirdCard.username}{thirdCard.moderator ? (<abbr title = "Community Moderator"><MdVerifiedUser /></abbr>) : ""}</h2></div><br />
      <a style = {{ color : "dodgerBlue", padding : "0",  }} href = {direct}><h3>About user</h3></a>
   </div>
   </p>

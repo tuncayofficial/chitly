@@ -6,10 +6,13 @@ import 'firebase/auth';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 import Button from '@material-ui/core/Button';
+import { HiDotsVertical } from "react-icons/hi"
 
 function CommunityCard(props){
    const [communities, setCommunities] = useState([])
    const [exists, setExists] = useState()
+   const [selected, setSelected] = useState([])
+   const [menu, setMenu] = useState(false)
    const auth = firebase.auth()
    const user = auth.currentUser
 
@@ -81,15 +84,14 @@ axios.post(url, data, {
   window.location.reload()
 }
 
+
 useEffect(()=>{
     fetchCommunities()
  },[])
 
 
-
    return(
        <div className="community-container">
-           
            {communities.map(function(community) {
               return (
                    <div key = {community._id} className="community-card">
@@ -101,8 +103,8 @@ useEffect(()=>{
                       <span className="id"><strong>Community ID : {community._id}</strong></span>
                       <span className="members"><strong>Member count : {community.members.length}</strong></span>
                    </div>
-                   {community.members.includes(user && user.displayName)?  (<button style = {{ backgroundColor : "red"}} onClick={() => handleQuit(community._id, user, axios)}>Quit</button>) : (<button onClick={() => handleJoin(community._id, user, axios)}>Join</button>)  }
-                   <a style = {{ color : "dodgerBlue", padding : "0",  }} href = "/community/{community.name}" ><h4>Go to community page</h4></a>
+                   {community.members.includes(user && user.displayName) ?  (<button style = {{ backgroundColor : "red"}} onClick={() => handleQuit(community._id, user, axios)}>Quit</button>) : (<button onClick={() => handleJoin(community._id, user, axios)}>Join</button>)  }
+                   <a style = {{ color : "dodgerBlue", padding : "0",  }} href = "/community/" ><h4>Go to community page</h4></a>
                    </div>
                )
            })}

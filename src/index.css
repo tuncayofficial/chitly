@@ -16,6 +16,7 @@ body {
 
 ::-webkit-scrollbar {
   width: 10px;
+  background-color: #262a30;
 }
 
 /* Track */
@@ -202,7 +203,7 @@ footer {
 }
 
 .register form {
-  height: 650px;
+  height: 800px;
   width : 600px;
   margin: auto;
   margin-top: 50px;
@@ -228,6 +229,175 @@ footer {
   white-space: nowrap; 
 }
 
+.community-menu ul {
+  position: absolute;
+  width : 150px;
+  height: 200px;
+  border-radius: 7px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: wheat;
+  flex-direction: column;
+  background-color: rgb(10, 13, 219);
+  margin: auto;
+}
+
+.community-menu ul li {
+  position: relative;
+  width : 160px;
+  right : 24px;
+}
+
+.news {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height : 70px;
+  background-color: #03fc6f;
+  color: black;
+}
+
+.news a {
+  color : rgb(7, 71, 134);
+}
+
+.specifies {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.specify {
+  width : 600px;
+  height : 60px;
+  border-radius: 7px;
+  text-align: center;
+  margin-bottom : 30px;
+  margin-left: 30px;
+  padding : 15px;
+  transition: 200ms all;
+}
+
+.specify:hover {
+  transform: scale(1.04);
+}
+
+.likebuttonpng{
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  bottom : -700px;
+  right : 40px;
+  transform: rotate(335deg);
+  transition: 200ms all;
+}
+
+.likebuttonpng:hover{
+   position: absolute;
+   bottom: -680px;
+}
+
+.starpng {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  bottom : -600px;
+  left : 40px;
+  transition: 200ms all;
+}
+
+.starpng:hover{
+  position: absolute;
+  bottom: -560px;
+}
+
+.laughpng {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  bottom : -1000px;
+  left : 40px;
+  transition: 200ms all;
+  transform: scale(1.06);
+}
+
+.laughpng:hover{
+  position: absolute;
+  bottom: -980px;
+}
+
+.topic-container {
+  background: #41295a;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #2F0743, #41295a);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #2F0743, #41295a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  height : 100px;
+  width : 1300px;
+  border-radius: 8px;
+  color : white;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.topic {
+  margin: 10px;
+  padding: 15px;
+  border-radius: 30px;
+  border: 2px solid red;
+  transition: 200ms ease-in-out;
+}
+
+.topic:hover {
+   background-color: red;
+   color: white;
+   cursor: pointer;
+}
+
+.labelbutton {
+  border: 3px solid dodgerblue;
+  margin-top : 25px;
+  border-radius: 100px;
+  padding : 25px;
+  position: relative;
+  font-size: 20px;
+  transition: 100ms ease-out;
+  text-align: center;
+}
+
+.labelbutton:hover {
+  background-color: dodgerblue;
+}
+
+.dashboard {
+  width : 700px;
+  height: 300px;
+  background-color: #8BC6EC;
+  background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
+  font-weight: bold;
+  padding : 30px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  align-items: center;
+  justify-content: space-around;
+  color: black;
+  font-size: larger;
+}
+
+.section2 {
+  display: flex;
+  flex-direction: row !important;
+}
+
 @media only screen and (max-width: 600px) {
   body {
     zoom : 50%;
@@ -251,3 +421,4 @@ footer {
 .multiple-nav-ul li:hover {
     background-color: black;
 }
+
